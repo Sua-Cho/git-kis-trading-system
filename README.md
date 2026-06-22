@@ -2,7 +2,6 @@
 
 
 Git-KIS-trading system 
-
 ```text
 ├── get_approval_key.py    # Approval Key 발급
 ├── get_token.py           # Access Token 발급
