@@ -9,7 +9,7 @@ Git-KIS-trading system
 ├── price.py               # 현재가 조회
 ├── account.py             # 잔고 조회, 매수 가능 조회
 ├── order.py               # 모의투자 주문
-├── main.py                # main.py
+├── main.py                # 조건 기반 자동매매, csv 로그 저장 
 ├── .gitignore
 └── README.md
 ```
