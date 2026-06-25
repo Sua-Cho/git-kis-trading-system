@@ -6,12 +6,12 @@
 
 ## Project Structure 
 ```text
+├── main.py                # 조건 기반 자동매매, csv 로그 저장 
 ├── get_approval_key.py    # Approval Key 발급
 ├── get_token.py           # Access Token 발급
 ├── price.py               # 현재가 조회
 ├── account.py             # 잔고 조회, 매수 가능 조회
 ├── order.py               # 모의투자 주문
-├── main.py                # 조건 기반 자동매매, csv 로그 저장 
 ├── .gitignore
 └── README.md
 ```
