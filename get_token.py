@@ -1,28 +1,36 @@
 from dotenv import load_dotenv
 import os
+import requests
 
 load_dotenv()
 
 APP_KEY = os.getenv("VTS_APPKEY")
 APP_SECRET = os.getenv("VTS_APPSECRET")
-CANO = os.getenv("VTS_CANO")
-ACNT_PRDT_CD = os.getenv("VTS_ACNT_PRDT_CD")
 
 
-import requests
-import json
+def get_access_token():
+    url = "https://openapivts.koreainvestment.com:29443/oauth2/tokenP"
 
-url = "https://openapivts.koreainvestment.com:29443/oauth2/tokenP"
+    body = {
+        "grant_type": "client_credentials",
+        "appkey": APP_KEY,
+        "appsecret": APP_SECRET
+    }
 
-payload = json.dumps({
-  "grant_type": "client_credentials",
-  "appkey": APP_KEY,
-  "appsecret": APP_SECRET
-})
-headers = {
-  'content-type': 'application/json'
-}
+    headers = {
+        "content-type": "application/json"
+    }
 
-response = requests.request("POST", url, headers=headers, data=payload)
+    response = requests.post(url, headers=headers, json=body)
+    data = response.json()
 
-print(response.text)
+    print(data)
+
+    if "access_token" not in data:
+        raise Exception(f"토큰 발급 실패: {data}")
+
+    return data["access_token"]
+
+
+if __name__ == "__main__":
+    print(get_access_token())

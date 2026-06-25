@@ -1,3 +1,4 @@
+#승인키 발급 
 from dotenv import load_dotenv
 import os
 import requests
