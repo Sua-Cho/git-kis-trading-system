@@ -7,7 +7,7 @@
 ## Project Structure 
 ```text
 
-├── main.py                    # 자동매매 실행
+├── main.py                    # 자동매매 실행, 거래내역 csv 저장 
 │   ├── get_approval_key.py    # Approval Key 발급
 │   ├── get_token.py           # Access Token 발급
 │   ├── price.py               # 현재가 조회
